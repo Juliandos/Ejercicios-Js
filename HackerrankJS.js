@@ -13,12 +13,20 @@ const matriz = [
     [-2, 0, 5, 4, 4, 4, -3, 3, 0]
 ];
 
+let puntajeA = [1, 2, 3];
+let puntajeB = [3, 2, 1];
+
+const arreglo = [
+    1001458909, 1004570889, 1007019111, 1003302837, 1002514638,
+    1006431461, 1002575010, 1007514041, 1007548981, 1004402249
+];
 
 d.getElementById('simpleArraySum').addEventListener('click', () => simpleArraySum(arr));
 d.getElementById('diferenciaDiagonal').addEventListener('click', () => diferenciaDiagonal(matriz));
+d.getElementById('compareTripletes').addEventListener('click', () => compareTripletes(puntajeA, puntajeB));
+d.getElementById('aVeryBigSum').addEventListener('click', () => aVeryBigSum(arreglo));
 
 // 1) Function to calculate the sum of an array
-
 function simpleArraySum(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -27,6 +35,7 @@ function simpleArraySum(arr) {
     console.log(arr,sum);
 }
 
+// 2)))  Función para calcular la Diferencia diagonal en una matriz cuadrada
 function diferenciaDiagonal(matrix) {
     let primaryDiagonal = 0;
     let secondaryDiagonal = 0;
@@ -37,4 +46,29 @@ function diferenciaDiagonal(matrix) {
     }
 
     console.log(matriz, Math.abs(primaryDiagonal - secondaryDiagonal)); // Diferencia absoluta
+}
+
+
+// 3) Función para calcular los puntos de un trio de puntajes
+ // [1, 1]
+function compareTripletes(a, b) {
+    let puntajes = [0, 0];
+    for(let i=0; i<3; i++){
+        if(a[i] > b[i]){
+            puntajes[0]++;
+        }else if(a[i] < b[i]){
+            puntajes[1]++;   
+        }
+    }  
+    console.log(puntajes);
+}
+
+function aVeryBigSum(ar) {
+    // Write your code here
+    let suma = 0;
+    
+    for(let i=0; i < ar.length; i++){
+        suma = suma + ar[i];
+    }
+    return suma;
 }
