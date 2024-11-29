@@ -24,6 +24,16 @@ const trainback = "6 9\n100 5\n120 10\n300 2\n500 3\n500 1\n800 8";
 const grades = [73, 67, 38, 33];
 const apples = [2, 3, -4, 4];
 const oranges = [3, -2, -4, 0];
+const a = [2, 4];
+const b = [16, 32, 96];
+const s = [2,2,1,3,2];
+const m =2;
+const de =4;
+const n15 = 6;
+const k15 = 3;
+const ar15 = [1, 3, 2, 6, 1, 2];
+const arr1 = [1, 4, 4, 4, 5, 3];
+
 
 // Selección ejercicios ----------------------------------------------------------------
 
@@ -84,13 +94,27 @@ d.getElementById("processData").addEventListener("click", () =>
 d.getElementById("gradingStudents").addEventListener("click", () =>
   gradingStudents(grades)
 );
-d.getElementById("gradingStudents").addEventListener("click", () =>
-  gradingStudents(grades)
-);
-d.getElementById("gradingStudents").addEventListener("click", () =>
+d.getElementById("countApplesAndOranges").addEventListener("click", () =>
   countApplesAndOranges(7,10,4,12,apples, oranges)
 );
-
+d.getElementById("getTotalX").addEventListener("click", () =>
+  getTotalX(a, b)
+);
+d.getElementById("breakingRecords").addEventListener("click", () =>
+  breakingRecords(scores)
+);
+d.getElementById("birthday").addEventListener("click", () =>
+  birthday(s, de, m)
+);
+d.getElementById("divisibleSumPairs").addEventListener("click", () =>
+  divisibleSumPairs(n15, k15, ar15)
+);
+d.getElementById("migratoryBirds").addEventListener("click", () =>
+  migratoryBirds(arr1)
+);
+d.getElementById("dayOfProgrammer").addEventListener("click", () =>
+  dayOfProgrammer(2017)
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -259,7 +283,7 @@ function gradingStudents(grades) {
   console.log(roundedGrades);
 }
 
-// 11) Función para calcular la cantidad de objetos en un rango
+// 11) Función para calcular la cantidad de objetos en un rangop
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
   let applesOnHouse = 0;
   let orangesOnHouse = 0;
@@ -282,8 +306,148 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(orangesOnHouse);
 }
 
+// 12) Función En medio de dos grupos
+function getTotalX(a, b) {
+  // Función para calcular el máximo común divisor (GCD)
+  function gcd(x, y) {
+      while (y !== 0) {
+          let temp = y;
+          y = x % y;
+          x = temp;
+      }
+      return x;
+  }
 
-// Funciones Medio ----------------------------------------------------------------
+  // Función para calcular el mínimo común múltiplo (LCM)
+  function lcm(x, y) {
+      return (x * y) / gcd(x, y);
+  }
+
+  // Calcular el LCM del array `a`
+  let lcmA = a[0];
+  for (let i = 1; i < a.length; i++) {
+      lcmA = lcm(lcmA, a[i]);
+  }
+
+  // Calcular el GCD del array `b`
+  let gcdB = b[0];
+  for (let i = 1; i < b.length; i++) {
+      gcdB = gcd(gcdB, b[i]);
+  }
+
+  // Contar los números entre LCM(a) y GCD(b)
+  let count = 0;
+  for (let i = lcmA; i <= gcdB; i += lcmA) {
+      if (gcdB % i === 0) {
+          count++;
+      }
+  }
+
+  console.log(count);
+  
+}
+
+// 13) Función para calcular la racha de victorias y derrotas
+function breakingRecords(scores) {
+  let minScore = scores[0];
+  let maxScore = scores[0];
+  let minBreaks = 0;
+  let maxBreaks = 0;
+
+  for (let i = 1; i < scores.length; i++) {
+      if (scores[i] > maxScore) {
+          maxScore = scores[i];
+          maxBreaks++;
+      } else if (scores[i] < minScore) {
+          minScore = scores[i];
+          minBreaks++;
+      }
+  }
+
+  return [maxBreaks, minBreaks];
+}
+
+// 14) Función para calcular la condición de suma de un array
+function birthday(s, d, m) {
+  let count = 0;
+
+  for (let i = 0; i <= s.length - m; i++) {
+      let segmentSum = s.slice(i, i + m).reduce((a, b) => a + b, 0);
+
+      if (segmentSum === d) {
+          count++;
+      }
+  }
+
+  console.log(count);
+  
+}
+
+// 15) Función para calcular la cantidad de pares de numeros que suman un divisor de un número dado
+function divisibleSumPairs(n15, k15, ar15) {
+  let count = 0;
+
+  for (let i = 0; i < n15 - 1; i++) {
+      for (let j = i + 1; j < n15; j++) {
+          if ((ar15[i] + ar15[j]) % k15 === 0) {
+              count++;
+          }
+      }
+  }
+
+  console.log(count);
+  
+}
+
+// 16) Función para calcular la cantidad de repite un número en un array
+function migratoryBirds(arr) {
+  // Crear un objeto para contar la frecuencia de cada tipo de pájaro
+  const birdCount = {};
+
+  // Contar la cantidad de cada tipo de pájaro
+  for (let i = 0; i < arr.length; i++) {
+      const bird = arr[i];
+      if (!birdCount[bird]) {
+          birdCount[bird] = 1;
+      } else {
+          birdCount[bird]++;
+      }
+  }
+
+  // Variables para rastrear el id del pájaro con mayor frecuencia
+  let maxCount = 0;
+  let resultId = Infinity;
+
+  // Encontrar el tipo de pájaro con la mayor frecuencia
+  for (let bird in birdCount) {
+      const count = birdCount[bird];
+      const birdId = parseInt(bird);
+
+      if (count > maxCount || (count === maxCount && birdId < resultId)) {
+          maxCount = count;
+          resultId = birdId;
+      }
+  }
+
+  console.log(resultId);
+  
+}
+
+// 17) Funciónpara cambiar la fecha del dia del programador entre calendario gregoriano y juliano
+function dayOfProgrammer(year) {
+  if (year === 1918) {
+      return "26.09.1918";
+  }
+
+  const isLeapYear = (year < 1918 && year % 4 === 0) || // Calendario Juliano
+                     (year > 1918 && (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0))); // Calendario Gregoriano
+
+  const day = isLeapYear ? 12 : 13;
+
+  // Formatear la fecha en dd.mm.yyyy
+  console.log(`${day.toString().padStart(2, '0')}.09.${year}`);
+}
+// Funciones Medio --------------------------------------------------------------------------------
 
 // function processData(input) {
 //   let entradas = input.split('\n');
@@ -412,4 +576,4 @@ const mines = [
 ];
 
 const result = mining(k, mines);
-console.log(result);
+// console.log(result);

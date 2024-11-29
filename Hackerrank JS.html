@@ -1,126 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Hackerrank JS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Hackerrank JS</title>
 </head>
+
 <body class="bg-light">
 
-    <!-- Título principal -->
-    <div class="container mt-4">
-        <h1 class="text-center text-primary">Hackerrank JS Ejercicios</h1>
-        <!-- Subtítulo -->
-        <h2 class="text-center text-secondary">Practicando habilidades de JavaScript</h2>
+  <!-- Título principal -->
+  <div class="container mt-4">
+    <h1 class="text-center text-primary">Hackerrank JS Ejercicios</h1>
+    <!-- Subtítulo -->
+    <h2 class="text-center text-secondary">Practicando habilidades de JavaScript</h2>
+  </div>
+
+  <!-- Desafíos JavaScript en Hackerrank Fáciles -->
+  <div class="container mt-5 p-4 border rounded bg-light shadow">
+    <h1 class="text-center text-success fw-bold" id="toggleButtonFac" style="cursor: pointer;">Desafíos JavaScript en
+      Hackerrank nivel Fáciles</h1>
+  </div>
+
+  <!-- Desafíos JavaScript en Hackerrank Medio -->
+  <div class="container mt-5 p-4 border rounded bg-light shadow">
+    <h1 class="text-center text-success fw-bold" id="toggleButtonMed" style="cursor: pointer;">Desafíos JavaScript en
+      Hackerrank nivel Medio</h1>
+  </div>|
+
+  <!-- Contenedor Fáciles -->
+  <div id="contentDivFac" style="display: none;">
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">1) Función para calcular la suma de un array de enteros</p>
+      <div class="text-center">
+        <button id="simpleArraySum" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
     </div>
-
-    <!-- Desafíos JavaScript en Hackerrank Fáciles -->
-    <div class="container mt-5 p-4 border rounded bg-light shadow">
-        <h1 class="text-center text-success fw-bold" id="toggleButtonFac" style="cursor: pointer;">Desafíos JavaScript en Hackerrank nivel Fáciles</h1>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">2) Función para calcular la Diferencia diagonal en una matriz cuadrada</p>
+      <div class="text-center">
+        <button id="diferenciaDiagonal" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
     </div>
-
-    <!-- Desafíos JavaScript en Hackerrank Medio -->
-    <div class="container mt-5 p-4 border rounded bg-light shadow">
-        <h1 class="text-center text-success fw-bold" id="toggleButtonMed" style="cursor: pointer;">Desafíos JavaScript en Hackerrank nivel Medio</h1>
-    </div>|
-
-    <!-- Contenedor Fáciles -->
-    <div id="contentDivFac" style="display: none;">
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">1)  Función para calcular la suma de un array de enteros</p>
-            <div class="text-center">
-                <button id="simpleArraySum" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">2)  Función para calcular la Diferencia diagonal en una matriz cuadrada</p>
-            <div class="text-center">
-                <button id="diferenciaDiagonal" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">3) Función para calcular los puntos de un trio de puntajes</p>
-            <div class="text-center">
-                <button id="compareTripletes" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">4) Sumar una cadena de array</p>
-            <div class="text-center">
-                <button id="aVeryBigSum" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">5) Función para calcular la proporción de valores positivos, negativos y ceros en un array</p>
-            <div class="text-center">
-                <button id="plusMinus" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">6) Función para dibujar una pirámide de tamaño n</p>
-            <div class="text-center">
-                <button id="staircase" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">7) Función para max y min de un array de 5 suma de 4 numeros</p>
-            <div class="text-center">
-                <button id="miniMaxSum" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">8) Función para determinar la cantidad de numeros altos se encuentran</p>
-            <div class="text-center">
-                <button id="birthdayCakeCandles" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">9) Función para convertir una hora de 24 horas a 12 horas</p>
-            <div class="text-center">
-                <button id="timeConversion" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">10) Función para redondear las notas de estudiantes</p>
-            <div class="text-center">
-                <button id="gradingStudents" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">10) Función para redondear las notas de estudiantes</p>
-            <div class="text-center">
-                <button id="countApplesAndOranges" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">3) Función para calcular los puntos de un trio de puntajes</p>
+      <div class="text-center">
+        <button id="compareTripletes" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
     </div>
-    
-
-    <!-- Contenedor Medio -->
-    <div id="contentDivMed" style="display: none;">
-        <div class="container my-5 p-4 border rounded bg-white shadow">
-            <p class="text-center fs-5">1) Función para calcular el número de pares de parejas que se pueden formar con los elementos de un array</p>
-            <div class="text-center">
-                <button id="processData" class="btn btn-primary btn-lg">Activar Función</button>
-            </div>
-        </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">4) Sumar una cadena de array</p>
+      <div class="text-center">
+        <button id="aVeryBigSum" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
     </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">5) Función para calcular la proporción de valores positivos, negativos y ceros en un
+        array</p>
+      <div class="text-center">
+        <button id="plusMinus" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">6) Función para dibujar una pirámide de tamaño n</p>
+      <div class="text-center">
+        <button id="staircase" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">7) Función para max y min de un array de 5 suma de 4 numeros</p>
+      <div class="text-center">
+        <button id="miniMaxSum" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">8) Función para determinar la cantidad de numeros altos se encuentran</p>
+      <div class="text-center">
+        <button id="birthdayCakeCandles" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">9) Función para convertir una hora de 24 horas a 12 horas</p>
+      <div class="text-center">
+        <button id="timeConversion" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">10) Función para redondear las notas de estudiantes</p>
+      <div class="text-center">
+        <button id="gradingStudents" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">11) Función para calcular la cantidad de objetos en un rangop</p>
+      <div class="text-center">
+        <button id="countApplesAndOranges" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">12) Función En medio de dos grupos</p>
+      <div class="text-center">
+        <button id="getTotalX" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">13) Función para calcular la racha de victorias y derrotas</p>
+      <div class="text-center">
+        <button id="breakingRecords" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">14) Función para calcular la condición de suma de un array</p>
+      <div class="text-center">
+        <button id="birthday" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">14) Función para calcular la condición de suma de un array</p>
+      <div class="text-center">
+        <button id="birthday" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">15) Función para calcular la cantidad de pares de numeros que suman un divisor de un número dado</p>
+      <div class="text-center">
+        <button id="divisibleSumPairs" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">16) Función para calcular la cantidad de repite un número en un array</p>
+      <div class="text-center">
+        <button id="migratoryBirds" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">17) Funciónpara cambiar la fecha del dia del programador entre calendario gregoriano y juliano</p>
+      <div class="text-center">
+        <button id="dayOfProgrammer" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Contenedor Medio -->
+  <div id="contentDivMed" style="display: none;">
+    <div class="container my-5 p-4 border rounded bg-white shadow">
+      <p class="text-center fs-5">1) Función para calcular el número de pares de parejas que se pueden formar con los
+        elementos de un array</p>
+      <div class="text-center">
+        <button id="processData" class="btn btn-primary btn-lg">Activar Función</button>
+      </div>
+    </div>
+  </div>
 
 
 
-    <!-- Comentarios para otras opciones de estilo -->
-    <!-- Botón secundario -->
-    <!-- <button class="btn btn-secondary">Botón Secundario</button> -->
+  <!-- Comentarios para otras opciones de estilo -->
+  <!-- Botón secundario -->
+  <!-- <button class="btn btn-secondary">Botón Secundario</button> -->
 
-    <!-- Botón de advertencia -->
-    <!-- <button class="btn btn-warning">Botón de Advertencia</button> -->
+  <!-- Botón de advertencia -->
+  <!-- <button class="btn btn-warning">Botón de Advertencia</button> -->
 
-    <!-- Alertas -->
-    <!-- <div class="alert alert-success">¡Operación exitosa!</div> -->
-    <!-- <div class="alert alert-danger">¡Ocurrió un error!</div> -->
+  <!-- Alertas -->
+  <!-- <div class="alert alert-success">¡Operación exitosa!</div> -->
+  <!-- <div class="alert alert-danger">¡Ocurrió un error!</div> -->
 
-    <!-- Tablas -->
-    <!--
+  <!-- Tablas -->
+  <!--
     <table class="table table-striped">
         <thead class="table-dark">
             <tr>
@@ -139,8 +187,8 @@
     </table>
     -->
 
-    <!-- Formulario básico -->
-    <!--
+  <!-- Formulario básico -->
+  <!--
     <form class="mt-3">
         <div class="mb-3">
             <label for="inputText" class="form-label">Entrada:</label>
@@ -150,6 +198,7 @@
     </form>
     -->
 
-    <script src="HackerrankJS.js"></script>
+  <script src="HackerrankJS.js"></script>
 </body>
+
 </html>
