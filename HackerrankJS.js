@@ -115,6 +115,9 @@ d.getElementById("migratoryBirds").addEventListener("click", () =>
 d.getElementById("dayOfProgrammer").addEventListener("click", () =>
   dayOfProgrammer(2017)
 );
+d.getElementById("bonAppetit").addEventListener("click", () =>
+  bonAppetit([3, 10, 2, 9], 1, 7)
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -446,6 +449,18 @@ function dayOfProgrammer(year) {
 
   // Formatear la fecha en dd.mm.yyyy
   console.log(`${day.toString().padStart(2, '0')}.09.${year}`);
+}
+
+// 18) Función para dividir una cuenta a la mitad
+function bonAppetit(bill, k, b) {
+  const totalShared = bill.reduce((sum, cost, index) => index !== k ? sum + cost : sum, 0);
+  const annaShare = totalShared / 2; // La parte justa de Anna
+
+  if (b === annaShare) {
+      console.log("Bon Appetit");
+  } else {
+      console.log(b - annaShare); // Monto que Brian debe devolverle a Anna
+  }
 }
 // Funciones Medio --------------------------------------------------------------------------------
 
