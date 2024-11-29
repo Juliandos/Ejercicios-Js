@@ -118,6 +118,9 @@ d.getElementById("dayOfProgrammer").addEventListener("click", () =>
 d.getElementById("bonAppetit").addEventListener("click", () =>
   bonAppetit([3, 10, 2, 9], 1, 7)
 );
+d.getElementById("sockMerchant").addEventListener("click", () =>
+  sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -461,6 +464,29 @@ function bonAppetit(bill, k, b) {
   } else {
       console.log(b - annaShare); // Monto que Brian debe devolverle a Anna
   }
+}
+
+// 19) Función para encontrar los pares de medias
+function sockMerchant(n, ar) {
+  const sockCount = {};
+  let pairs = 0;
+
+  // Contar los calcetines por color
+  for (let i = 0; i < n; i++) {
+      const sock = ar[i];
+      if (!sockCount[sock]) {
+          sockCount[sock] = 1;
+      } else {
+          sockCount[sock]++;
+      }
+  }
+
+  // Contar los pares
+  for (let color in sockCount) {
+      pairs += Math.floor(sockCount[color] / 2);
+  }
+
+  console.log(pairs);
 }
 // Funciones Medio --------------------------------------------------------------------------------
 
