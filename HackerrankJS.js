@@ -121,6 +121,12 @@ d.getElementById("bonAppetit").addEventListener("click", () =>
 d.getElementById("sockMerchant").addEventListener("click", () =>
   sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])
 );
+d.getElementById("pageCount").addEventListener("click", () =>
+  pageCount(5, 4)
+);
+d.getElementById("countingValleys").addEventListener("click", () =>
+  countingValleys(8, "UDDDUDUU")
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -488,6 +494,47 @@ function sockMerchant(n, ar) {
 
   console.log(pairs);
 }
+
+// 20) Función para llegar a una página desde el frente o desde atras
+function pageCount(n, p) {
+  // Calculate pages to turn from the front
+  const fromFront = Math.floor(p / 2);
+  
+  // Calculate pages to turn from the back
+  const fromBack = Math.floor((n / 2) - Math.floor(p / 2));
+  
+  // Return the minimum of the two
+  console.log(Math.min(fromFront, fromBack));
+}
+
+// 21) calcular valles que recorre un caminador
+function countingValleys(steps, path) {
+  let seaLevel = 0; // Represents current altitude
+  let valleys = 0;  // Count of valleys
+  let inValley = false; // Track if the hiker is currently in a valley
+
+  for (let i = 0; i < steps; i++) {
+      if (path[i] === 'U') {
+          seaLevel++; // Step up
+      } else if (path[i] === 'D') {
+          seaLevel--; // Step down
+      }
+
+      // Check if the hiker has entered a valley
+      if (seaLevel < 0 && !inValley) {
+          inValley = true;
+      }
+
+      // Check if the hiker has exited a valley
+      if (seaLevel === 0 && inValley) {
+          valleys++;
+          inValley = false; // Reset valley status
+      }
+  }
+
+  console.log(valleys);
+}
+
 // Funciones Medio --------------------------------------------------------------------------------
 
 // function processData(input) {
