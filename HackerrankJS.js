@@ -127,6 +127,40 @@ d.getElementById("pageCount").addEventListener("click", () =>
 d.getElementById("countingValleys").addEventListener("click", () =>
   countingValleys(8, "UDDDUDUU")
 );
+d.getElementById("getMoneySpent").addEventListener("click", () =>
+  getMoneySpent([3, 1], [5, 2, 8], 10)
+);
+d.getElementById("catAndMouse").addEventListener("click", () =>
+  catAndMouse(1, 3, 2)
+);
+d.getElementById("pickingNumbers").addEventListener("click", () =>
+  pickingNumbers([1,1,2,2,4,4,5,5])
+);
+d.getElementById("minning").addEventListener("click", () =>
+  mining(11, [
+  [8, 336],
+  [10, 393],
+  [15, 410],
+  [17, 466],
+  [24, 514],
+  [32, 527],
+  [42, 529],
+  [43, 644],
+  [55, 767],
+  [77, 778],
+  [82, 736],
+  [85, 647],
+  [87, 608],
+  [93, 599],
+  [94, 531]
+])
+);
+d.getElementById("nonDivisibleSubset").addEventListener("click", () =>
+  nonDivisibleSubset(5, [770528134, 663501748, 384261537, 800309024, 103668401, 538539662, 385488901, 101262949, 557792122, 46058493])
+);
+d.getElementById("repeatedString").addEventListener("click", () =>
+  repeatedString("aab", 882787)
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -535,7 +569,57 @@ function countingValleys(steps, path) {
   console.log(valleys);
 }
 
-// Funciones Medio --------------------------------------------------------------------------------
+// 22) Comprar lo mejor con cierta cantidad de dinero
+function getMoneySpent(keyboards, drives, b) {
+  let maxSpent = -1; // Initialize to -1 for cases where no combination is within budget
+
+  for (let keyboard of keyboards) {
+      for (let drive of drives) {
+          const totalCost = keyboard + drive;
+
+          if (totalCost <= b && totalCost > maxSpent) {
+              maxSpent = totalCost;
+          }
+      }
+  }
+
+  console.log(maxSpent);
+}
+
+// 23) Quien llega primero
+function catAndMouse(x, y, z) {
+  const distanceA = Math.abs(z - x); // Distance from Cat A to the mouse
+  const distanceB = Math.abs(z - y); // Distance from Cat B to the mouse
+
+  if (distanceA < distanceB) {
+      console.log("Cat A");
+  } else if (distanceB < distanceA) {
+      console.log("Cat B");
+  } else {
+      console.log("Mouse C");
+  }
+}
+
+
+function pickingNumbers(a) {
+  const frequency = Array(101).fill(0);
+
+  // Count the frequency of each number
+  for (let num of a) {
+      frequency[num]++;
+  }
+  console.log(frequency);
+  
+  let maxLength = 0;
+
+  // Check the sum of frequencies for consecutive numbers
+  for (let i = 1; i < frequency.length; i++) {
+      maxLength = Math.max(maxLength, frequency[i] + frequency[i - 1]);
+  }
+
+  console.log(maxLength);
+}
+// Funciones Medio -----------------------------------------------------------------------------------------------------------------------
 
 // function processData(input) {
 //   let entradas = input.split('\n');
@@ -613,7 +697,7 @@ function processData(input) {
   }
 }
 
-//
+// Función para calcular el costo de minar
 function mining(k, mines) {
   const n = mines.length;
 
@@ -639,29 +723,70 @@ function mining(k, mines) {
           }
       }
   }
-
+  console.log(dp[n][k]);
+  
   return dp[n][k];
 }
 
-// Example usage with the provided test case
-const k = 11;
-const mines = [
-  [8, 336],
-  [10, 393],
-  [15, 410],
-  [17, 466],
-  [24, 514],
-  [32, 527],
-  [42, 529],
-  [43, 644],
-  [55, 767],
-  [77, 778],
-  [82, 736],
-  [85, 647],
-  [87, 608],
-  [93, 599],
-  [94, 531]
-];
+// Función para saber que sumas de dos números no son divisibles entre k, máximos números posibles
+function nonDivisibleSubset(k1, s1) {
+    let remainders = new Array(k1).fill(0);
+    for (let num of s1) {
+        remainders[num % k1]++;
+    }
+    
+    let result = 0;
+    if (remainders[0] > 0) {
+        result += 1;
+    }
+    
+    for (let i = 1; i <= k1 / 2; i++) {
+      if (i !== k1 - i) {
+          result += Math.max(remainders[i], remainders[k1 - i]);
+        } else {
+          result += 1;
+        }
+        
+    }
+    console.log(result);
+    return result;
+}
 
-const result = mining(k, mines);
-// console.log(result);
+// Función para encontrar la cantidad de veces que se repite la letra "a" en una subcadena repetida muchas veces
+function repeatedString(s, n) {
+    const countA = (str) => str.split('a').length - 1; // Cuenta las 'a' en una cadena
+
+    const aInS = countA(s);
+    const repeticionesCompletas = Math.floor(n / s.length);
+    const caracteresRestantes = n % s.length;
+    const aEnResto = countA(s.substring(0, caracteresRestantes));
+    console.log(aInS * repeticionesCompletas + aEnResto);
+    
+    return aInS * repeticionesCompletas + aEnResto;
+}
+
+const c = [
+  0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
+  0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1,
+  0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+  0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
+  1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0
+];
+function jumpingOnClouds(c) {
+  let saltos =0;
+  for (let i = 0; i < c.length; i++) {
+    if (c[i] === 0) {
+      if (c[i+1] === 0) {
+        saltos++;
+        i++;
+      }
+    }else{
+      saltos++;
+    }
+  }
+
+  return saltos;
+}
+
+const result3 = jumpingOnClouds(c);
+console.log(result3);
