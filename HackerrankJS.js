@@ -161,6 +161,15 @@ d.getElementById("nonDivisibleSubset").addEventListener("click", () =>
 d.getElementById("repeatedString").addEventListener("click", () =>
   repeatedString("aab", 882787)
 );
+d.getElementById("jumpingOnClouds").addEventListener("click", () =>
+  jumpingOnClouds([
+  0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
+  0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1,
+  0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
+  0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
+  1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0
+])
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -765,13 +774,8 @@ function repeatedString(s, n) {
     return aInS * repeticionesCompletas + aEnResto;
 }
 
-const c = [
-  0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
-  0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1,
-  0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
-  0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
-  1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0
-];
+
+// Función para encontrar el número de saltos de cero en cero max de 2 y de 1
 function jumpingOnClouds(c) {
   let saltos =0;
   for (let i = 0; i < c.length; i++) {
@@ -784,9 +788,6 @@ function jumpingOnClouds(c) {
       saltos++;
     }
   }
-
+  console.log(saltos);
   return saltos;
 }
-
-const result3 = jumpingOnClouds(c);
-console.log(result3);
