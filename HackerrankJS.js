@@ -170,6 +170,14 @@ d.getElementById("jumpingOnClouds").addEventListener("click", () =>
   1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0
 ])
 );
+d.getElementById("equalizeArray").addEventListener("click", () =>
+  equalizeArray([
+  41, 22, 80, 80, 41, 41, 41, 80, 22, 80, 22, 41, 41, 41, 80, 80,
+  22, 22, 22, 22, 41, 80, 80, 41, 22, 80, 80, 80, 80, 41, 22, 80,
+  22, 22, 22, 80, 22, 80, 80, 41, 22, 41, 41, 22, 22, 41, 22, 22,
+  80, 22, 22, 80, 41
+])
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -774,7 +782,6 @@ function repeatedString(s, n) {
     return aInS * repeticionesCompletas + aEnResto;
 }
 
-
 // Función para encontrar el número de saltos de cero en cero max de 2 y de 1
 function jumpingOnClouds(c) {
   let saltos =0;
@@ -791,3 +798,19 @@ function jumpingOnClouds(c) {
   console.log(saltos);
   return saltos;
 }
+
+// Función para contar cuantos números de un array no son el número ma´s repetido
+function equalizeArray(arr) {
+  const conteo = {};
+  arr.forEach(num => {
+    conteo[num] = (conteo[num] || 0) + 1;
+  });
+  
+  const maxCount = Math.max(...Object.values(conteo));
+  
+  const elementosABorrar = arr.length - maxCount;
+  
+  console.log(elementosABorrar);
+  return elementosABorrar;
+}
+
