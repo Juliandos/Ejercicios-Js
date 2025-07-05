@@ -178,6 +178,9 @@ d.getElementById("equalizeArray").addEventListener("click", () =>
   80, 22, 22, 80, 41
 ])
 );
+d.getElementById("queensAttack").addEventListener("click", () =>
+  queensAttack(5, 3, 4, 3, [[5, 5], [4, 2], [2, 3]])
+);
 // Funciones fáciles ----------------------------------------------------------------
 
 // 1) Function to calculate the sum of an array
@@ -805,12 +808,45 @@ function equalizeArray(arr) {
   arr.forEach(num => {
     conteo[num] = (conteo[num] || 0) + 1;
   });
-  
   const maxCount = Math.max(...Object.values(conteo));
-  
   const elementosABorrar = arr.length - maxCount;
-  
-  console.log(elementosABorrar);
   return elementosABorrar;
 }
 
+// Función para movimientos de la reina
+function queensAttack(n, k, r_q, c_q, obstacles) {
+    const obstaclesSet = new Set();
+    for (const [r, c] of obstacles) {
+        obstaclesSet.add(`${r},${c}`);
+    }
+    
+    const directions = [
+        [0, 1], 
+        [0, -1],
+        [1, 0], 
+        [-1, 0],
+        [1, 1], 
+        [1, -1],
+        [-1, 1],
+        [-1, -1]
+    ];
+    
+    let count = 0;
+    
+    for (const [dr, dc] of directions) {
+        let r = r_q + dr;
+        let c = c_q + dc;
+        
+        while (r >= 1 && r <= n && c >= 1 && c <= n) {
+            if (obstaclesSet.has(`${r},${c}`)) {
+                break;
+            }
+            count++;
+            r += dr;
+            c += dc;
+        }
+    }
+    console.log(count);
+    
+    return count;
+}
