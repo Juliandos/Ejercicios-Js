@@ -885,5 +885,27 @@ function acmTeam(topic) {
   return [maxTopics, teamCount];
 }
 
+function climbingLeaderboard(ranked, player) {
+    // Write your code here
+  
+  let posicion = [];
 
+  for (let i = 0; i < player.length; i++) {// Ciclo de PLAYER   50 65 77 90 102
+    
+    for (let r = ranked.length - 1; r > 0; r--) {// ciclo de RANKED 100 90 90 80 75 60
+      console.log(player[i], ranked[r]);
+      
+      if (player[i] > ranked[r]) {
+        posicion[i] = ranked.length - r;
+        // console.log(ranked.length - r);
+        
+      } else {
+        posicion[i] = ranked.length - i;
+      }
+    }
+  }
+  console.log(posicion);
+  
+}
 
+climbingLeaderboard([100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102])
