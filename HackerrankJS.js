@@ -136,6 +136,9 @@ d.getElementById("catAndMouse").addEventListener("click", () =>
 d.getElementById("pickingNumbers").addEventListener("click", () =>
   pickingNumbers([1,1,2,2,4,4,5,5])
 );
+d.getElementById("kangaroo").addEventListener("click", () =>
+  kangaroo(0,3,4,2)
+);
 d.getElementById("minning").addEventListener("click", () =>
   mining(11, [
   [8, 336],
@@ -182,12 +185,13 @@ d.getElementById("queensAttack").addEventListener("click", () =>
   queensAttack(5, 3, 4, 3, [[5, 5], [4, 2], [2, 3]])
 );
 d.getElementById("acmTeam").addEventListener("click", () =>
-  acmTeam([
+  acmTeam(
+  [1, 1, 1, 0, 1],
   [1, 0, 1, 0, 1],
-  [1, 1, 1, 0, 0],
-  [1, 1, 0, 1, 0],
-  [0, 0, 1, 0, 1]
-])
+  [1, 1, 0, 0, 1],
+  [1, 0, 1, 1, 1],
+  [1, 0, 0, 0, 0],
+  [0, 1, 1, 1, 0])
 );
 // Funciones fáciles ----------------------------------------------------------------
 
@@ -234,6 +238,8 @@ function aVeryBigSum(ar) {
   for (let i = 0; i < ar.length; i++) {
     suma = suma + ar[i];
   }
+  console.log(suma);
+  
   return suma;
 }
 
@@ -628,7 +634,6 @@ function catAndMouse(x, y, z) {
   }
 }
 
-
 function pickingNumbers(a) {
   const frequency = Array(101).fill(0);
 
@@ -646,6 +651,33 @@ function pickingNumbers(a) {
   }
 
   console.log(maxLength);
+}
+
+// 24) saltos desde una posición, son iguales ?
+function kangaroo(x1, v1, x2, v2) {
+    // Write your code here
+  if (v2 > v1 && x2 > x1) {
+    console.log("NO");
+    
+  }else if (v1 > v2 && x1 > x2) {
+    console.log("NO");
+    
+  }
+
+  let posicionx1 = 0;
+  let posicionx2 = 0;
+
+  for (let i = 1; i <= 1000000; i++) {
+    posicionx1 = (i * v1) + x1;
+    posicionx2 = (i * v2) + x2;
+    if (posicionx1 == posicionx2) {
+      console.log("SI");
+      
+    }
+  }
+  console.log("NO");
+  ;
+  
 }
 // Funciones Medio -----------------------------------------------------------------------------------------------------------------------
 
@@ -821,43 +853,6 @@ function equalizeArray(arr) {
   return elementosABorrar;
 }
 
-// Función para movimientos de la reina
-function queensAttack(n, k, r_q, c_q, obstacles) {
-    const obstaclesSet = new Set();
-    for (const [r, c] of obstacles) {
-        obstaclesSet.add(`${r},${c}`);
-    }
-    
-    const directions = [
-        [0, 1], 
-        [0, -1],
-        [1, 0], 
-        [-1, 0],
-        [1, 1], 
-        [1, -1],
-        [-1, 1],
-        [-1, -1]
-    ];
-    
-    let count = 0;
-    
-    for (const [dr, dc] of directions) {
-        let r = r_q + dr;
-        let c = c_q + dc;
-        
-        while (r >= 1 && r <= n && c >= 1 && c <= n) {
-            if (obstaclesSet.has(`${r},${c}`)) {
-                break;
-            }
-            count++;
-            r += dr;
-            c += dc;
-        }
-    }
-    console.log(count);
-    
-    return count;
-}
 
 // Función para contar el número de 1 en una matriz binaria por parejas ó la pareja que mas temas sepa
 function acmTeam(topic) {
@@ -869,9 +864,9 @@ function acmTeam(topic) {
     for (let j = i + 1; j < n; j++) {
       let knownTopics = 0;
       
-      // Comparar cada tema entre los dos asistentes
+      // Comparar cada tema entre los dos asistentes usando OR bit a bit
       for (let k = 0; k < topic[i].length; k++) {
-        if (topic[i][k] === 1 || topic[j][k] === 1) {
+        if (topic[i][k] | topic[j][k]) {
           knownTopics++;
         }
       }
@@ -886,5 +881,9 @@ function acmTeam(topic) {
     }
   }
   console.log(maxTopics, teamCount);
+  
   return [maxTopics, teamCount];
 }
+
+
+
