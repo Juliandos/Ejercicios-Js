@@ -26,14 +26,13 @@ const apples = [2, 3, -4, 4];
 const oranges = [3, -2, -4, 0];
 const a = [2, 4];
 const b = [16, 32, 96];
-const s = [2,2,1,3,2];
-const m =2;
-const de =4;
+const s = [2, 2, 1, 3, 2];
+const m = 2;
+const de = 4;
 const n15 = 6;
 const k15 = 3;
 const ar15 = [1, 3, 2, 6, 1, 2];
 const arr1 = [1, 4, 4, 4, 5, 3];
-
 
 // Selección ejercicios ----------------------------------------------------------------
 
@@ -95,11 +94,9 @@ d.getElementById("gradingStudents").addEventListener("click", () =>
   gradingStudents(grades)
 );
 d.getElementById("countApplesAndOranges").addEventListener("click", () =>
-  countApplesAndOranges(7,10,4,12,apples, oranges)
+  countApplesAndOranges(7, 10, 4, 12, apples, oranges)
 );
-d.getElementById("getTotalX").addEventListener("click", () =>
-  getTotalX(a, b)
-);
+d.getElementById("getTotalX").addEventListener("click", () => getTotalX(a, b));
 d.getElementById("breakingRecords").addEventListener("click", () =>
   breakingRecords(scores)
 );
@@ -121,9 +118,7 @@ d.getElementById("bonAppetit").addEventListener("click", () =>
 d.getElementById("sockMerchant").addEventListener("click", () =>
   sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20])
 );
-d.getElementById("pageCount").addEventListener("click", () =>
-  pageCount(5, 4)
-);
+d.getElementById("pageCount").addEventListener("click", () => pageCount(5, 4));
 d.getElementById("countingValleys").addEventListener("click", () =>
   countingValleys(8, "UDDDUDUU")
 );
@@ -134,64 +129,76 @@ d.getElementById("catAndMouse").addEventListener("click", () =>
   catAndMouse(1, 3, 2)
 );
 d.getElementById("pickingNumbers").addEventListener("click", () =>
-  pickingNumbers([1,1,2,2,4,4,5,5])
+  pickingNumbers([1, 1, 2, 2, 4, 4, 5, 5])
 );
 d.getElementById("kangaroo").addEventListener("click", () =>
-  kangaroo(0,3,4,2)
+  kangaroo(0, 3, 4, 2)
+);
+d.getElementById("climbingLeaderboard").addEventListener("click", () =>
+  climbingLeaderboard([100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102])
 );
 d.getElementById("minning").addEventListener("click", () =>
   mining(11, [
-  [8, 336],
-  [10, 393],
-  [15, 410],
-  [17, 466],
-  [24, 514],
-  [32, 527],
-  [42, 529],
-  [43, 644],
-  [55, 767],
-  [77, 778],
-  [82, 736],
-  [85, 647],
-  [87, 608],
-  [93, 599],
-  [94, 531]
-])
+    [8, 336],
+    [10, 393],
+    [15, 410],
+    [17, 466],
+    [24, 514],
+    [32, 527],
+    [42, 529],
+    [43, 644],
+    [55, 767],
+    [77, 778],
+    [82, 736],
+    [85, 647],
+    [87, 608],
+    [93, 599],
+    [94, 531],
+  ])
 );
 d.getElementById("nonDivisibleSubset").addEventListener("click", () =>
-  nonDivisibleSubset(5, [770528134, 663501748, 384261537, 800309024, 103668401, 538539662, 385488901, 101262949, 557792122, 46058493])
+  nonDivisibleSubset(
+    5,
+    [
+      770528134, 663501748, 384261537, 800309024, 103668401, 538539662,
+      385488901, 101262949, 557792122, 46058493,
+    ]
+  )
 );
 d.getElementById("repeatedString").addEventListener("click", () =>
   repeatedString("aab", 882787)
 );
 d.getElementById("jumpingOnClouds").addEventListener("click", () =>
   jumpingOnClouds([
-  0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0,
-  0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1,
-  0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1,
-  0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
-  1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0
-])
+    0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0,
+    0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1,
+    0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1,
+    0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
+  ])
 );
 d.getElementById("equalizeArray").addEventListener("click", () =>
   equalizeArray([
-  41, 22, 80, 80, 41, 41, 41, 80, 22, 80, 22, 41, 41, 41, 80, 80,
-  22, 22, 22, 22, 41, 80, 80, 41, 22, 80, 80, 80, 80, 41, 22, 80,
-  22, 22, 22, 80, 22, 80, 80, 41, 22, 41, 41, 22, 22, 41, 22, 22,
-  80, 22, 22, 80, 41
-])
+    41, 22, 80, 80, 41, 41, 41, 80, 22, 80, 22, 41, 41, 41, 80, 80, 22, 22, 22,
+    22, 41, 80, 80, 41, 22, 80, 80, 80, 80, 41, 22, 80, 22, 22, 22, 80, 22, 80,
+    80, 41, 22, 41, 41, 22, 22, 41, 22, 22, 80, 22, 22, 80, 41,
+  ])
 );
 d.getElementById("queensAttack").addEventListener("click", () =>
-  queensAttack(5, 3, 4, 3, [[5, 5], [4, 2], [2, 3]])
+  queensAttack(5, 3, 4, 3, [
+    [5, 5],
+    [4, 2],
+    [2, 3],
+  ])
 );
 d.getElementById("acmTeam").addEventListener("click", () =>
   acmTeam(
-  [1, 1, 1, 0, 1],
-  [1, 0, 1, 0, 1],
-  [1, 1, 0, 0, 1],
-  [1, 0, 1, 1, 1],
-  [1, 0, 0, 0, 0],
-  [0, 1, 1, 1, 0])
+    [1, 1, 1, 0, 1],
+    [1, 0, 1, 0, 1],
+    [1, 1, 0, 0, 1],
+    [1, 0, 1, 1, 1],
+    [1, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0]
+  )
 );
 // Funciones fáciles ----------------------------------------------------------------
 
@@ -239,7 +246,7 @@ function aVeryBigSum(ar) {
     suma = suma + ar[i];
   }
   console.log(suma);
-  
+
   return suma;
 }
 
@@ -347,17 +354,17 @@ function timeConversion(s) {
 // 10) Función para redondear las notas de estudiantes
 function gradingStudents(grades) {
   let roundedGrades = {};
-  let i = 0 ;
-  grades.map(grade => {
-    i++; 
+  let i = 0;
+  grades.map((grade) => {
+    i++;
     if (grade < 38) {
-        roundedGrades[i] = grade; 
+      roundedGrades[i] = grade;
     }
     const nextMultipleOf5 = Math.ceil(grade / 5) * 5;
     if (nextMultipleOf5 - grade < 3) {
-      roundedGrades[i] = nextMultipleOf5;  
-    }else{
-      roundedGrades[i] = nextMultipleOf5; 
+      roundedGrades[i] = nextMultipleOf5;
+    } else {
+      roundedGrades[i] = nextMultipleOf5;
     }
   });
   console.log(roundedGrades);
@@ -368,18 +375,18 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   let applesOnHouse = 0;
   let orangesOnHouse = 0;
 
-  apples.forEach(apple => {
-      const landingPosition = a + apple; 
-      if (landingPosition >= s && landingPosition <= t) {
-          applesOnHouse++;
-      }
+  apples.forEach((apple) => {
+    const landingPosition = a + apple;
+    if (landingPosition >= s && landingPosition <= t) {
+      applesOnHouse++;
+    }
   });
 
-  oranges.forEach(orange => {
-      const landingPosition = b + orange; 
-      if (landingPosition >= s && landingPosition <= t) {
-          orangesOnHouse++;
-      }
+  oranges.forEach((orange) => {
+    const landingPosition = b + orange;
+    if (landingPosition >= s && landingPosition <= t) {
+      orangesOnHouse++;
+    }
   });
 
   console.log(applesOnHouse);
@@ -390,41 +397,40 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
 function getTotalX(a, b) {
   // Función para calcular el máximo común divisor (GCD)
   function gcd(x, y) {
-      while (y !== 0) {
-          let temp = y;
-          y = x % y;
-          x = temp;
-      }
-      return x;
+    while (y !== 0) {
+      let temp = y;
+      y = x % y;
+      x = temp;
+    }
+    return x;
   }
 
   // Función para calcular el mínimo común múltiplo (LCM)
   function lcm(x, y) {
-      return (x * y) / gcd(x, y);
+    return (x * y) / gcd(x, y);
   }
 
   // Calcular el LCM del array `a`
   let lcmA = a[0];
   for (let i = 1; i < a.length; i++) {
-      lcmA = lcm(lcmA, a[i]);
+    lcmA = lcm(lcmA, a[i]);
   }
 
   // Calcular el GCD del array `b`
   let gcdB = b[0];
   for (let i = 1; i < b.length; i++) {
-      gcdB = gcd(gcdB, b[i]);
+    gcdB = gcd(gcdB, b[i]);
   }
 
   // Contar los números entre LCM(a) y GCD(b)
   let count = 0;
   for (let i = lcmA; i <= gcdB; i += lcmA) {
-      if (gcdB % i === 0) {
-          count++;
-      }
+    if (gcdB % i === 0) {
+      count++;
+    }
   }
 
   console.log(count);
-  
 }
 
 // 13) Función para calcular la racha de victorias y derrotas
@@ -435,13 +441,13 @@ function breakingRecords(scores) {
   let maxBreaks = 0;
 
   for (let i = 1; i < scores.length; i++) {
-      if (scores[i] > maxScore) {
-          maxScore = scores[i];
-          maxBreaks++;
-      } else if (scores[i] < minScore) {
-          minScore = scores[i];
-          minBreaks++;
-      }
+    if (scores[i] > maxScore) {
+      maxScore = scores[i];
+      maxBreaks++;
+    } else if (scores[i] < minScore) {
+      minScore = scores[i];
+      minBreaks++;
+    }
   }
 
   return [maxBreaks, minBreaks];
@@ -452,15 +458,14 @@ function birthday(s, d, m) {
   let count = 0;
 
   for (let i = 0; i <= s.length - m; i++) {
-      let segmentSum = s.slice(i, i + m).reduce((a, b) => a + b, 0);
+    let segmentSum = s.slice(i, i + m).reduce((a, b) => a + b, 0);
 
-      if (segmentSum === d) {
-          count++;
-      }
+    if (segmentSum === d) {
+      count++;
+    }
   }
 
   console.log(count);
-  
 }
 
 // 15) Función para calcular la cantidad de pares de numeros que suman un divisor de un número dado
@@ -468,15 +473,14 @@ function divisibleSumPairs(n15, k15, ar15) {
   let count = 0;
 
   for (let i = 0; i < n15 - 1; i++) {
-      for (let j = i + 1; j < n15; j++) {
-          if ((ar15[i] + ar15[j]) % k15 === 0) {
-              count++;
-          }
+    for (let j = i + 1; j < n15; j++) {
+      if ((ar15[i] + ar15[j]) % k15 === 0) {
+        count++;
       }
+    }
   }
 
   console.log(count);
-  
 }
 
 // 16) Función para calcular la cantidad de repite un número en un array
@@ -486,12 +490,12 @@ function migratoryBirds(arr) {
 
   // Contar la cantidad de cada tipo de pájaro
   for (let i = 0; i < arr.length; i++) {
-      const bird = arr[i];
-      if (!birdCount[bird]) {
-          birdCount[bird] = 1;
-      } else {
-          birdCount[bird]++;
-      }
+    const bird = arr[i];
+    if (!birdCount[bird]) {
+      birdCount[bird] = 1;
+    } else {
+      birdCount[bird]++;
+    }
   }
 
   // Variables para rastrear el id del pájaro con mayor frecuencia
@@ -500,43 +504,46 @@ function migratoryBirds(arr) {
 
   // Encontrar el tipo de pájaro con la mayor frecuencia
   for (let bird in birdCount) {
-      const count = birdCount[bird];
-      const birdId = parseInt(bird);
+    const count = birdCount[bird];
+    const birdId = parseInt(bird);
 
-      if (count > maxCount || (count === maxCount && birdId < resultId)) {
-          maxCount = count;
-          resultId = birdId;
-      }
+    if (count > maxCount || (count === maxCount && birdId < resultId)) {
+      maxCount = count;
+      resultId = birdId;
+    }
   }
 
   console.log(resultId);
-  
 }
 
 // 17) Funciónpara cambiar la fecha del dia del programador entre calendario gregoriano y juliano
 function dayOfProgrammer(year) {
   if (year === 1918) {
-      return "26.09.1918";
+    return "26.09.1918";
   }
 
-  const isLeapYear = (year < 1918 && year % 4 === 0) || // Calendario Juliano
-                     (year > 1918 && (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0))); // Calendario Gregoriano
+  const isLeapYear =
+    (year < 1918 && year % 4 === 0) || // Calendario Juliano
+    (year > 1918 && (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0))); // Calendario Gregoriano
 
   const day = isLeapYear ? 12 : 13;
 
   // Formatear la fecha en dd.mm.yyyy
-  console.log(`${day.toString().padStart(2, '0')}.09.${year}`);
+  console.log(`${day.toString().padStart(2, "0")}.09.${year}`);
 }
 
 // 18) Función para dividir una cuenta a la mitad
 function bonAppetit(bill, k, b) {
-  const totalShared = bill.reduce((sum, cost, index) => index !== k ? sum + cost : sum, 0);
+  const totalShared = bill.reduce(
+    (sum, cost, index) => (index !== k ? sum + cost : sum),
+    0
+  );
   const annaShare = totalShared / 2; // La parte justa de Anna
 
   if (b === annaShare) {
-      console.log("Bon Appetit");
+    console.log("Bon Appetit");
   } else {
-      console.log(b - annaShare); // Monto que Brian debe devolverle a Anna
+    console.log(b - annaShare); // Monto que Brian debe devolverle a Anna
   }
 }
 
@@ -547,17 +554,17 @@ function sockMerchant(n, ar) {
 
   // Contar los calcetines por color
   for (let i = 0; i < n; i++) {
-      const sock = ar[i];
-      if (!sockCount[sock]) {
-          sockCount[sock] = 1;
-      } else {
-          sockCount[sock]++;
-      }
+    const sock = ar[i];
+    if (!sockCount[sock]) {
+      sockCount[sock] = 1;
+    } else {
+      sockCount[sock]++;
+    }
   }
 
   // Contar los pares
   for (let color in sockCount) {
-      pairs += Math.floor(sockCount[color] / 2);
+    pairs += Math.floor(sockCount[color] / 2);
   }
 
   console.log(pairs);
@@ -567,10 +574,10 @@ function sockMerchant(n, ar) {
 function pageCount(n, p) {
   // Calculate pages to turn from the front
   const fromFront = Math.floor(p / 2);
-  
+
   // Calculate pages to turn from the back
-  const fromBack = Math.floor((n / 2) - Math.floor(p / 2));
-  
+  const fromBack = Math.floor(n / 2 - Math.floor(p / 2));
+
   // Return the minimum of the two
   console.log(Math.min(fromFront, fromBack));
 }
@@ -578,26 +585,26 @@ function pageCount(n, p) {
 // 21) calcular valles que recorre un caminador
 function countingValleys(steps, path) {
   let seaLevel = 0; // Represents current altitude
-  let valleys = 0;  // Count of valleys
+  let valleys = 0; // Count of valleys
   let inValley = false; // Track if the hiker is currently in a valley
 
   for (let i = 0; i < steps; i++) {
-      if (path[i] === 'U') {
-          seaLevel++; // Step up
-      } else if (path[i] === 'D') {
-          seaLevel--; // Step down
-      }
+    if (path[i] === "U") {
+      seaLevel++; // Step up
+    } else if (path[i] === "D") {
+      seaLevel--; // Step down
+    }
 
-      // Check if the hiker has entered a valley
-      if (seaLevel < 0 && !inValley) {
-          inValley = true;
-      }
+    // Check if the hiker has entered a valley
+    if (seaLevel < 0 && !inValley) {
+      inValley = true;
+    }
 
-      // Check if the hiker has exited a valley
-      if (seaLevel === 0 && inValley) {
-          valleys++;
-          inValley = false; // Reset valley status
-      }
+    // Check if the hiker has exited a valley
+    if (seaLevel === 0 && inValley) {
+      valleys++;
+      inValley = false; // Reset valley status
+    }
   }
 
   console.log(valleys);
@@ -608,13 +615,13 @@ function getMoneySpent(keyboards, drives, b) {
   let maxSpent = -1; // Initialize to -1 for cases where no combination is within budget
 
   for (let keyboard of keyboards) {
-      for (let drive of drives) {
-          const totalCost = keyboard + drive;
+    for (let drive of drives) {
+      const totalCost = keyboard + drive;
 
-          if (totalCost <= b && totalCost > maxSpent) {
-              maxSpent = totalCost;
-          }
+      if (totalCost <= b && totalCost > maxSpent) {
+        maxSpent = totalCost;
       }
+    }
   }
 
   console.log(maxSpent);
@@ -626,11 +633,11 @@ function catAndMouse(x, y, z) {
   const distanceB = Math.abs(z - y); // Distance from Cat B to the mouse
 
   if (distanceA < distanceB) {
-      console.log("Cat A");
+    console.log("Cat A");
   } else if (distanceB < distanceA) {
-      console.log("Cat B");
+    console.log("Cat B");
   } else {
-      console.log("Mouse C");
+    console.log("Mouse C");
   }
 }
 
@@ -639,15 +646,15 @@ function pickingNumbers(a) {
 
   // Count the frequency of each number
   for (let num of a) {
-      frequency[num]++;
+    frequency[num]++;
   }
   console.log(frequency);
-  
+
   let maxLength = 0;
 
   // Check the sum of frequencies for consecutive numbers
   for (let i = 1; i < frequency.length; i++) {
-      maxLength = Math.max(maxLength, frequency[i] + frequency[i - 1]);
+    maxLength = Math.max(maxLength, frequency[i] + frequency[i - 1]);
   }
 
   console.log(maxLength);
@@ -655,29 +662,61 @@ function pickingNumbers(a) {
 
 // 24) saltos desde una posición, son iguales ?
 function kangaroo(x1, v1, x2, v2) {
-    // Write your code here
+  // Write your code here
   if (v2 > v1 && x2 > x1) {
     console.log("NO");
-    
-  }else if (v1 > v2 && x1 > x2) {
+  } else if (v1 > v2 && x1 > x2) {
     console.log("NO");
-    
   }
 
   let posicionx1 = 0;
   let posicionx2 = 0;
 
   for (let i = 1; i <= 1000000; i++) {
-    posicionx1 = (i * v1) + x1;
-    posicionx2 = (i * v2) + x2;
+    posicionx1 = i * v1 + x1;
+    posicionx2 = i * v2 + x2;
     if (posicionx1 == posicionx2) {
       console.log("SI");
-      
     }
   }
   console.log("NO");
-  ;
-  
+}
+
+// 25) Determinar la posición en una ranking y unos puntajes
+function climbingLeaderboard(ranked, player) {
+  let distinct = [];
+  for (let score of ranked) {
+    if (distinct.length === 0 || score !== distinct[distinct.length - 1]) {
+      distinct.push(score);
+    }
+  }
+  console.log(distinct);
+
+  let n = distinct.length;
+  let res = [];
+
+  for (let s of player) {
+    let low = 0;
+    let high = n - 1;
+    let index = n;
+    
+    while (low <= high) {
+      let mid = Math.floor((low + high) / 2);
+      console.log("Low: ", low, "Mid: ", mid, "High: ", high, "Index: ", index, "Distinct[mid]: ", distinct[mid], "S: ", s);
+
+      if (distinct[mid] <= s) {
+        index = mid;
+        high = mid - 1;
+      } else {
+        low = mid + 1;
+      }
+    }
+    
+    res.push(index + 1);
+    console.log("Res: ", res);
+  }
+
+  return res;
 }
 // Funciones Medio -----------------------------------------------------------------------------------------------------------------------
 
@@ -740,10 +779,10 @@ function processData(input) {
 
   let dp = new Array(goldAmount + 1).fill(-Infinity);
   dp[0] = 0; // No gold, no profit
-  
+
   for (let i = 0; i < n; i++) {
     let { price, grams } = offers[i];
-    
+
     for (let j = goldAmount; j >= grams; j--) {
       dp[j] = Math.max(dp[j], dp[j - grams] + price);
     }
@@ -764,77 +803,77 @@ function mining(k, mines) {
   const cost = Array.from({ length: n }, () => Array(n).fill(0));
 
   for (let start = 0; start < n; start++) {
-      for (let end = start; end < n; end++) {
-          let center = Math.floor((start + end) / 2);
-          let centerLocation = mines[center][0];
-          for (let i = start; i <= end; i++) {
-              cost[start][end] += Math.abs(mines[i][0] - centerLocation) * mines[i][1];
-          }
+    for (let end = start; end < n; end++) {
+      let center = Math.floor((start + end) / 2);
+      let centerLocation = mines[center][0];
+      for (let i = start; i <= end; i++) {
+        cost[start][end] +=
+          Math.abs(mines[i][0] - centerLocation) * mines[i][1];
       }
+    }
   }
 
   const dp = Array.from({ length: n + 1 }, () => Array(k + 1).fill(Infinity));
   dp[0][0] = 0;
 
   for (let j = 1; j <= k; j++) {
-      for (let i = 1; i <= n; i++) {
-          for (let m = 0; m < i; m++) {
-              dp[i][j] = Math.min(dp[i][j], dp[m][j - 1] + cost[m][i - 1]);
-          }
+    for (let i = 1; i <= n; i++) {
+      for (let m = 0; m < i; m++) {
+        dp[i][j] = Math.min(dp[i][j], dp[m][j - 1] + cost[m][i - 1]);
       }
+    }
   }
   console.log(dp[n][k]);
-  
+
   return dp[n][k];
 }
 
 // Función para saber que sumas de dos números no son divisibles entre k, máximos números posibles
 function nonDivisibleSubset(k1, s1) {
-    let remainders = new Array(k1).fill(0);
-    for (let num of s1) {
-        remainders[num % k1]++;
+  let remainders = new Array(k1).fill(0);
+  for (let num of s1) {
+    remainders[num % k1]++;
+  }
+
+  let result = 0;
+  if (remainders[0] > 0) {
+    result += 1;
+  }
+
+  for (let i = 1; i <= k1 / 2; i++) {
+    if (i !== k1 - i) {
+      result += Math.max(remainders[i], remainders[k1 - i]);
+    } else {
+      result += 1;
     }
-    
-    let result = 0;
-    if (remainders[0] > 0) {
-        result += 1;
-    }
-    
-    for (let i = 1; i <= k1 / 2; i++) {
-      if (i !== k1 - i) {
-          result += Math.max(remainders[i], remainders[k1 - i]);
-        } else {
-          result += 1;
-        }
-        
-    }
-    console.log(result);
-    return result;
+  }
+  console.log(result);
+  return result;
 }
 
 // Función para encontrar la cantidad de veces que se repite la letra "a" en una subcadena repetida muchas veces
 function repeatedString(s, n) {
-    const countA = (str) => str.split('a').length - 1; // Cuenta las 'a' en una cadena
+  const countA = (str) => str.split("a").length - 1; // Cuenta las 'a' en una cadena
 
-    const aInS = countA(s);
-    const repeticionesCompletas = Math.floor(n / s.length);
-    const caracteresRestantes = n % s.length;
-    const aEnResto = countA(s.substring(0, caracteresRestantes));
-    console.log(aInS * repeticionesCompletas + aEnResto);
-    
-    return aInS * repeticionesCompletas + aEnResto;
+  const aInS = countA(s);
+  const repeticionesCompletas = Math.floor(n / s.length);
+  const caracteresRestantes = n % s.length;
+  const aEnResto = countA(s.substring(0, caracteresRestantes));
+  console.log(aInS * repeticionesCompletas + aEnResto);
+
+  return aInS * repeticionesCompletas + aEnResto;
 }
 
 // Función para encontrar el número de saltos de cero en cero max de 2 y de 1
 function jumpingOnClouds(c) {
-  let saltos =0;
+  let saltos = 0;
   for (let i = 0; i < c.length; i++) {
     if (c[i] === 0) {
-      if (c[i+1] === 0) {
+      if (c[i + 1] === 0) {
         saltos++;
         i++;
       }
-    }else{
+    } else {
       saltos++;
     }
   }
@@ -845,7 +884,7 @@ function jumpingOnClouds(c) {
 // Función para contar cuantos números de un array no son el número ma´s repetido
 function equalizeArray(arr) {
   const conteo = {};
-  arr.forEach(num => {
+  arr.forEach((num) => {
     conteo[num] = (conteo[num] || 0) + 1;
   });
   const maxCount = Math.max(...Object.values(conteo));
@@ -853,24 +892,23 @@ function equalizeArray(arr) {
   return elementosABorrar;
 }
 
-
 // Función para contar el número de 1 en una matriz binaria por parejas ó la pareja que mas temas sepa
 function acmTeam(topic) {
   let maxTopics = 0;
   let teamCount = 0;
   const n = topic.length;
-  
+
   for (let i = 0; i < n - 1; i++) {
     for (let j = i + 1; j < n; j++) {
       let knownTopics = 0;
-      
+
       // Comparar cada tema entre los dos asistentes usando OR bit a bit
       for (let k = 0; k < topic[i].length; k++) {
         if (topic[i][k] | topic[j][k]) {
           knownTopics++;
         }
       }
-      
+
       // Actualizar máximo y contador
       if (knownTopics > maxTopics) {
         maxTopics = knownTopics;
@@ -881,31 +919,45 @@ function acmTeam(topic) {
     }
   }
   console.log(maxTopics, teamCount);
-  
+
   return [maxTopics, teamCount];
 }
 
-function climbingLeaderboard(ranked, player) {
-    // Write your code here
+// Encontrar el valor en un array de valores para letras
+function designerPdfViewer(h, word) {// [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+  const words = word.split('').map(letter => letter.charCodeAt(0));// números 97-122
+  let masGrande = 0;
   
-  let posicion = [];
+    for (let j = 0; j < word.length; j++) {
+      console.log(words[j] - 97, h[words[j] - 97]);
+      if (h[words[j] - 97] > masGrande) {
+        masGrande = h[words[j] - 97]
+      }
+      console.log(masGrande*word.length, "h[", j, "]: ", h[j]);
+    }
+  return masGrande*word.length
+}
 
-  for (let i = 0; i < player.length; i++) {// Ciclo de PLAYER   50 65 77 90 102
-    
-    for (let r = ranked.length - 1; r > 0; r--) {// ciclo de RANKED 100 90 90 80 75 60
-      console.log(player[i], ranked[r]);
-      
-      if (player[i] > ranked[r]) {
-        posicion[i] = ranked.length - r;
-        // console.log(ranked.length - r);
-        
+// console.log(designerPdfViewer([6, 3, 4, 4, 6, 4, 5, 3, 4, 3, 6, 5, 4, 7, 7, 1, 3, 4, 2, 5, 6, 1, 5, 1, 7, 2], "nrdyluacvr"));
+
+
+function utopianTree(n) {
+  // Write your code here
+  let suma = 0;
+  for (let i = 0; i <= n; i++) {
+    if (i == 0) suma += 1;
+
+    if (i > 0) {
+      if (i % 2 == 0) {
+        suma += 1;
+        console.log(suma);
       } else {
-        posicion[i] = ranked.length - i;
+        suma *= 2;
+        console.log(suma);
       }
     }
   }
-  console.log(posicion);
-  
+  return suma;
 }
 
-climbingLeaderboard([100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102])
+utopianTree(27)
