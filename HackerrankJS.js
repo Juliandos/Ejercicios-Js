@@ -146,6 +146,9 @@ d.getElementById("utopianTree").addEventListener("click", () =>
 d.getElementById("angryProfessor").addEventListener("click", () =>
   angryProfessor(32, [-53, 27, 19, -81, -68, -39, -38, 94, 80, 86, 52, -98, -10, -79, 66, 25, 78, -66, -48, -72, 86, 59, 0, -97, 3, -51, -98, -54, -6, 3, -84, 97, -33, -60, -14, -97, 97, 29, -13, -34, 14, -75, -86, 26, 16, -69, 9, 15, -33, 76, -13, 0, 86, -63, 8, -16, -82, 40, 26, 65, 99, 46, 53, 3, 42, 34, -10, 69, 15, 96, 82, -51, 61, -37, -61, 81, 88, -20, -93, 28, -8, 42, 96, -66, 0, -87, 32, 50, -33, -80, 93, -54, 44, -23, 51, -73, -65, 81, -83, -77])
 );
+d.getElementById("beautifulDays").addEventListener("click", () =>
+  beautifulDays(20, 30, 6)
+);
 d.getElementById("minning").addEventListener("click", () =>
   mining(11, [
     [8, 336],
@@ -774,13 +777,28 @@ function angryProfessor(k, a) {
   console.log(maxEstudents >= k ? "NO" : "YES");
 }
 
-// 30) determinar si en un rango
+// 30) determinar si en un rango (i + i-invertido)/6 da entero ++
 function beautifulDays(i, j, k) {
-    // Write your code here
+  // Write your code here
+  let beautifulDays = 0;
 
+  for (let l = 0; l < (j - i + 1); l++) {
+
+    const invertido = parseInt(
+        (i + l).toString()
+        .split('')
+        .reverse()
+        .join('')
+    );
+    
+    if ((((i + l) - invertido) % k) == 0) {
+      beautifulDays++;
+    }
+    console.log(i + l, invertido, (((i + l) - invertido) % k));
+    
+  }
+  console.log(beautifulDays);
 }
-console.log();
-
 
 // Funciones Medio -----------------------------------------------------------------------------------------------------------------------
 
