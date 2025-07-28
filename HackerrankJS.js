@@ -143,6 +143,9 @@ d.getElementById("designerPdfViewer").addEventListener("click", () =>
 d.getElementById("utopianTree").addEventListener("click", () =>
   utopianTree(27)
 );
+d.getElementById("angryProfessor").addEventListener("click", () =>
+  angryProfessor(32, [-53, 27, 19, -81, -68, -39, -38, 94, 80, 86, 52, -98, -10, -79, 66, 25, 78, -66, -48, -72, 86, 59, 0, -97, 3, -51, -98, -54, -6, 3, -84, 97, -33, -60, -14, -97, 97, 29, -13, -34, 14, -75, -86, 26, 16, -69, 9, 15, -33, 76, -13, 0, 86, -63, 8, -16, -82, 40, 26, 65, 99, 46, 53, 3, 42, 34, -10, 69, 15, 96, 82, -51, 61, -37, -61, 81, 88, -20, -93, 28, -8, 42, 96, -66, 0, -87, 32, 50, -33, -80, 93, -54, 44, -23, 51, -73, -65, 81, -83, -77])
+);
 d.getElementById("minning").addEventListener("click", () =>
   mining(11, [
     [8, 336],
@@ -759,6 +762,26 @@ function utopianTree(n) {
   }
   return suma;
 }
+
+// 29) llegarón tarde a clase, tantos k > 0
+function angryProfessor(k, a) {
+  // Write your code here
+  let maxEstudents = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] <= 0) maxEstudents++;
+  }
+  
+  console.log(maxEstudents >= k ? "NO" : "YES");
+}
+
+// 30) determinar si en un rango
+function beautifulDays(i, j, k) {
+    // Write your code here
+
+}
+console.log();
+
+
 // Funciones Medio -----------------------------------------------------------------------------------------------------------------------
 
 // function processData(input) {
@@ -963,12 +986,3 @@ function acmTeam(topic) {
 
   return [maxTopics, teamCount];
 }
-
-
-
-// console.log(designerPdfViewer([6, 3, 4, 4, 6, 4, 5, 3, 4, 3, 6, 5, 4, 7, 7, 1, 3, 4, 2, 5, 6, 1, 5, 1, 7, 2], "nrdyluacvr"));
-
-
-
-
-utopianTree(27)
