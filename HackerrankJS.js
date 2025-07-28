@@ -137,6 +137,12 @@ d.getElementById("kangaroo").addEventListener("click", () =>
 d.getElementById("climbingLeaderboard").addEventListener("click", () =>
   climbingLeaderboard([100, 90, 90, 80, 75, 60], [50, 65, 77, 90, 102])
 );
+d.getElementById("designerPdfViewer").addEventListener("click", () =>
+  designerPdfViewer([1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5], "palabra")
+);
+d.getElementById("utopianTree").addEventListener("click", () =>
+  utopianTree(27)
+);
 d.getElementById("minning").addEventListener("click", () =>
   mining(11, [
     [8, 336],
@@ -718,6 +724,41 @@ function climbingLeaderboard(ranked, player) {
 
   return res;
 }
+
+// 27) Encontrar el valor en un array de valores para letras
+function designerPdfViewer(h, word) {// [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+  const words = word.split('').map(letter => letter.charCodeAt(0));// números 97-122
+  let masGrande = 0;
+  
+    for (let j = 0; j < word.length; j++) {
+      console.log(words[j] - 97, h[words[j] - 97]);
+      if (h[words[j] - 97] > masGrande) {
+        masGrande = h[words[j] - 97]
+      }
+      console.log(masGrande*word.length, "h[", j, "]: ", h[j]);
+    }
+  return masGrande*word.length
+}
+
+// 28) impar *2, par +1, suma
+function utopianTree(n) {
+  // Write your code here
+  let suma = 0;
+  for (let i = 0; i <= n; i++) {
+    if (i == 0) suma += 1;
+
+    if (i > 0) {
+      if (i % 2 == 0) {
+        suma += 1;
+        console.log(suma);
+      } else {
+        suma *= 2;
+        console.log(suma);
+      }
+    }
+  }
+  return suma;
+}
 // Funciones Medio -----------------------------------------------------------------------------------------------------------------------
 
 // function processData(input) {
@@ -923,41 +964,11 @@ function acmTeam(topic) {
   return [maxTopics, teamCount];
 }
 
-// Encontrar el valor en un array de valores para letras
-function designerPdfViewer(h, word) {// [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
-  const words = word.split('').map(letter => letter.charCodeAt(0));// números 97-122
-  let masGrande = 0;
-  
-    for (let j = 0; j < word.length; j++) {
-      console.log(words[j] - 97, h[words[j] - 97]);
-      if (h[words[j] - 97] > masGrande) {
-        masGrande = h[words[j] - 97]
-      }
-      console.log(masGrande*word.length, "h[", j, "]: ", h[j]);
-    }
-  return masGrande*word.length
-}
+
 
 // console.log(designerPdfViewer([6, 3, 4, 4, 6, 4, 5, 3, 4, 3, 6, 5, 4, 7, 7, 1, 3, 4, 2, 5, 6, 1, 5, 1, 7, 2], "nrdyluacvr"));
 
 
-function utopianTree(n) {
-  // Write your code here
-  let suma = 0;
-  for (let i = 0; i <= n; i++) {
-    if (i == 0) suma += 1;
 
-    if (i > 0) {
-      if (i % 2 == 0) {
-        suma += 1;
-        console.log(suma);
-      } else {
-        suma *= 2;
-        console.log(suma);
-      }
-    }
-  }
-  return suma;
-}
 
 utopianTree(27)
